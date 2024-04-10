@@ -13,6 +13,15 @@
   --m-pupil-height: 100px;
 }
 
+.m-glint {
+  background-color: rgb(217, 220, 224);
+  width: var(--m-eye-width);
+  height: var(--m-eye-height);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
 .m-eye {
   background-color: rgb(217, 220, 224);
   width: var(--m-eye-width);

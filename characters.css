@@ -15,7 +15,7 @@
 }
 
 .c-eye {
-  background-color: rgb(98, 100, 102);
+  background-color: rgb(214, 218, 221);
   width: var(--c-eye-width);
   height: var(--c-eye-height);
   border-radius: 50%;
@@ -66,6 +66,7 @@
 }
 
 .c-iris-top-left {
+  background-color: rgb(16, 131, 26);
   animation-name: c-iris-top-left;
 }
 
@@ -102,7 +103,24 @@
   }
 }
 
+.c-delay-top-right {
+  animation-delay: 0.5s;
+}
+
+.c-delay-top-left {
+  animation-delay: 1s;
+}
+
+.c-delay-bot-right {
+  animation-delay: 0s;
+}
+
+.c-delay-bot-left {
+  animation-delay: 1.5s;
+}
+
 .c-iris-top-right {
+  background-color: rgb(112, 26, 26);
   animation-name: c-iris-top-right;
 }
 
@@ -140,6 +158,7 @@
 }
 
 .c-iris-bot-left {
+  background-color: rgb(180, 8, 137);
   animation-name: c-iris-bot-left;
 }
 
@@ -177,6 +196,7 @@
 }
 
 .c-iris-bot-right {
+  background-color: rgb(179, 192, 58);
   animation-name: c-iris-bot-right;
 }
 
