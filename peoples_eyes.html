@@ -4,266 +4,11 @@
 <head>
   <meta charset="utf-8">
   <title>Eye animation</title>
+  <link rel="stylesheet" href="characters.css">
   <style>
-    :root {
-      --eye-width: 300px;
-      --eye-height: 300px;
-      --eye-w-half: calc(var(--eye-width) / 2);
-      --eye-h-half: calc(var(--eye-height) / 2);
-      --eyelid-top: calc(0px - var(--eye-height));
-      --iris-width: 150px;
-      --iris-height: 150px;
-      --iris-w-half: calc(var(--iris-width) / 2);
-      --iris-h-half: calc(var(--iris-height) / 2);
-      --iris-top: calc(var(--eye-h-half) - var(--iris-h-half));
-      --iris-left: calc(var(--eye-w-half) - var(--iris-w-half));
-      --pupil-width: 100px;
-      --pupil-height: 100px;
+    body {
+      /* background-color: black; */
     }
-
-    .eye {
-      background-color: rgb(98, 100, 102);
-      width: var(--eye-width);
-      height: var(--eye-height);
-      border-radius: 50%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .eyelid {
-      background-color: #ff6b6b;
-      width: var(--eye-width);
-      height: var(--eye-height);
-      position: absolute;
-      top: var(--eyelid-top);
-      animation-name: eyelid;
-      animation-duration: 5s;
-      animation-iteration-count: infinite;
-    }
-
-    @keyframes eyelid {
-      0% {
-        top: var(--eyelid-top);
-      }
-
-      15% {
-        top: 0px;
-      }
-
-      30%,
-      100% {
-        top: var(--eyelid-top);
-      }
-    }
-
-    .iris {
-      background-color: rgb(72, 147, 190);
-      width: var(--iris-width);
-      height: var(--iris-height);
-      border-radius: 50%;
-      position: absolute;
-      top: var(--iris-top);
-      left: var(--iris-left);
-    }
-
-    .iris {
-      /* animation-name: iris; */
-      animation-duration: 10s;
-      animation-iteration-count: infinite;
-      animation-timing-function: linear;
-    }
-
-    @keyframes iris {
-
-      0%,
-      20% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      25%,
-      40% {
-        left: calc(var(--iris-left) - var(--eye-w-half) + var(--iris-w-half));
-        top: var(--iris-top);
-      }
-
-      45%,
-      65% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      70%,
-      80% {
-        left: var(--iris-left);
-        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
-      }
-
-      85%,
-      100% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-    }
-
-    .iris-top-left {
-      animation-name: iris-top-left;
-    }
-
-    @keyframes iris-top-left {
-
-      0%,
-      20% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      25%,
-      40% {
-        left: calc(var(--iris-left) - var(--eye-w-half) + var(--iris-w-half));
-        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
-      }
-
-      45%,
-      65% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      70%,
-      80% {
-        left: var(--iris-left);
-        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
-      }
-
-      85%,
-      100% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-    }
-
-    .iris-top-right {
-      animation-name: iris-top-right;
-    }
-
-    @keyframes iris-top-right {
-
-      0%,
-      20% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      25%,
-      40% {
-        left: calc(var(--iris-left) + var(--eye-w-half) - var(--iris-w-half));
-        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
-      }
-
-      45%,
-      65% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      70%,
-      80% {
-        left: var(--iris-left);
-        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
-      }
-
-      85%,
-      100% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-    }
-
-    .iris-bot-left {
-      animation-name: iris-bot-left;
-    }
-
-    @keyframes iris-bot-left {
-
-      0%,
-      20% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      25%,
-      40% {
-        left: calc(var(--iris-left) - var(--eye-w-half) + var(--iris-w-half));
-        top: var(--iris-top);
-      }
-
-      45%,
-      65% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      70%,
-      80% {
-        left: var(--iris-left);
-        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
-      }
-
-      85%,
-      100% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-    }
-
-    .iris-bot-right {
-      animation-name: iris-bot-right;
-    }
-
-    @keyframes iris-bot-right {
-
-      0%,
-      20% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      25%,
-      40% {
-        left: calc(var(--iris-left) + var(--eye-w-half) - var(--iris-w-half));
-        top: var(--iris-top);
-      }
-
-      45%,
-      65% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-
-      70%,
-      80% {
-        left: var(--iris-left);
-        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
-      }
-
-      85%,
-      100% {
-        left: var(--iris-left);
-        top: var(--iris-top);
-      }
-    }
-
-    .pupille {
-      background-color: rgb(0, 0, 0);
-      width: var(--pupil-width);
-      height: var(--pupil-height);
-      border-radius: 50%;
-      position: absolute;
-      left: calc(var(--iris-w-half) - (var(--pupil-width) / 2));
-      top: calc(var(--iris-h-half) - (var(--pupil-height) / 2));
-    }
-
     .container {
       display: flex;
       flex-wrap: nowrap;
@@ -280,19 +25,19 @@
     <!-- Character Top Left -->
     <div class="container">
       <div style="width: 50px;"></div>
-      <div class="eye">
-        <div class="iris iris-top-left ">
-          <div class="pupille"></div>
+      <div class="c-eye">
+        <div class="c-iris c-iris-top-left ">
+          <div class="c-pupille"></div>
         </div>
-        <div class="eyelid">
+        <div class="c-eyelid">
         </div>
       </div>
       <div style="width: 50px;"></div>
-      <div class="eye">
-        <div class="iris iris-top-left">
-          <div class="pupille"></div>
+      <div class="c-eye">
+        <div class="c-iris c-iris-top-left">
+          <div class="c-pupille"></div>
         </div>
-        <div class="eyelid">
+        <div class="c-eyelid">
         </div>
       </div>
     </div>
@@ -300,19 +45,19 @@
     <!-- Character Top Right -->
     <div class="container">
       <div style="width: 50px;"></div>
-      <div class="eye">
-        <div class="iris iris-top-right">
-          <div class="pupille"></div>
+      <div class="c-eye">
+        <div class="c-iris c-iris-top-right">
+          <div class="c-pupille"></div>
         </div>
-        <div class="eyelid">
+        <div class="c-eyelid">
         </div>
       </div>
       <div style="width: 50px;"></div>
-      <div class="eye">
-        <div class="iris iris-top-right">
-          <div class="pupille"></div>
+      <div class="c-eye">
+        <div class="c-iris c-iris-top-right">
+          <div class="c-pupille"></div>
         </div>
-        <div class="eyelid">
+        <div class="c-eyelid">
         </div>
       </div>
     </div>
@@ -325,19 +70,19 @@
     <!-- Character Bot Left -->
     <div class="container">
       <div style="width: 50px;"></div>
-      <div class="eye">
-        <div class="iris iris-bot-left">
-          <div class="pupille"></div>
+      <div class="c-eye">
+        <div class="c-iris c-iris-bot-left">
+          <div class="c-pupille"></div>
         </div>
-        <div class="eyelid">
+        <div class="c-eyelid">
         </div>
       </div>
       <div style="width: 50px;"></div>
-      <div class="eye">
-        <div class="iris iris-bot-left">
-          <div class="pupille"></div>
+      <div class="c-eye">
+        <div class="c-iris c-iris-bot-left">
+          <div class="c-pupille"></div>
         </div>
-        <div class="eyelid">
+        <div class="c-eyelid">
         </div>
       </div>
     </div>
@@ -345,19 +90,19 @@
     <!-- Character Bot Right -->
     <div class="container">
       <div style="width: 50px;"></div>
-      <div class="eye">
-        <div class="iris iris-bot-right">
-          <div class="pupille"></div>
+      <div class="c-eye">
+        <div class="c-iris c-iris-bot-right">
+          <div class="c-pupille"></div>
         </div>
-        <div class="eyelid">
+        <div class="c-eyelid">
         </div>
       </div>
       <div style="width: 50px;"></div>
-      <div class="eye">
-        <div class="iris iris-bot-right">
-          <div class="pupille"></div>
+      <div class="c-eye">
+        <div class="c-iris c-iris-bot-right">
+          <div class="c-pupille"></div>
         </div>
-        <div class="eyelid">
+        <div class="c-eyelid">
         </div>
       </div>
     </div>
