@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mammoth Eye animation</title>
+  <style>
+    :root {
+      --eye-width: 350px;
+      --eye-height: 300px;
+      --eye-w-half: calc(var(--eye-width) / 2);
+      --eye-h-half: calc(var(--eye-height) / 2);
+      --iris-width: 200px;
+      --iris-height: 200px;
+      --iris-w-half: calc(var(--iris-width) / 2);
+      --iris-h-half: calc(var(--iris-height) / 2);
+      --iris-top: calc(var(--eye-h-half) - var(--iris-h-half));
+      --iris-left: calc(var(--eye-w-half) - var(--iris-w-half));
+      --pupil-width: 100px;
+      --pupil-height: 100px;
+    }
+
+    .eye {
+      background-color: rgb(98, 100, 102);
+      width: var(--eye-width);
+      height: var(--eye-height);
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .eyelid {
+      background-color: #ff6b6b;
+      width: var(--eye-width);
+      height: var(--eye-height);
+      position: absolute;
+      top: calc(0px - (var(--eye-height)));
+      animation-name: eyelid;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes eyelid {
+      0% {
+        top: calc(0px - var(--eye-height));
+      }
+      4%, 5% {
+        top: 0px;
+      }
+      8%, 30% {
+        top: calc(0px - var(--eye-height));
+      }
+      /* Look at the audience on the right */
+      34%, 35% {
+        top: 0px;
+      }
+      /* Move by the bottom */
+      38%, 70% {
+        top: calc(0px - var(--eye-height));
+      }
+      74%, 75% {
+        top: 0px;
+      }
+      78%, 100% {
+        top: calc(0px - var(--eye-height));
+      }
+    }
+
+    .iris {
+      background-color: rgb(72, 147, 190);
+      width: var(--iris-width);
+      height: var(--iris-height);
+      border-radius: 50%;
+      position: absolute;
+      top: var(--iris-top);
+      left: var(--iris-left)
+    }
+
+    .iris-right {
+      animation-name: iris-right;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes iris-right {
+      /* Initial position */
+      0%, 20% {
+        left: var(--iris-left);
+        top: var(--iris-top);
+      }
+      /* Look at the audience on the right */
+      24%, 40% {
+        left: calc(var(--iris-left) - var(--eye-w-half) + var(--iris-w-half));
+        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
+      }
+      /* Move by the bottom */
+      44% {
+        left: calc(var(--iris-left));
+        top: calc(var(--iris-top) + var(--eye-h-half) - (var(--iris-h-half) / 2));
+      }
+      /* Look at the audience on the left */
+      48%, 60% {
+        left: calc(var(--iris-left) + var(--eye-w-half) - var(--iris-w-half));
+        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
+      }
+      /* Initial position */
+      64%, 80% {
+        left: var(--iris-left);
+        top: var(--iris-top);
+      }
+      /* Squinty */
+      84%, 90% {
+        left: calc(var(--iris-left) + var(--eye-w-half) - var(--iris-w-half));
+        top: var(--iris-top);
+      }
+      /* Rollback */
+      92% {
+        left: calc(var(--iris-left) + var(--eye-w-half) + var(--iris-w-half));
+        top: var(--iris-top);
+        animation-timing-function: steps(1, end);
+      }
+      94% {
+        left: calc(var(--iris-left) - var(--eye-w-half) - var(--iris-w-half));
+        top: var(--iris-top);
+      }
+      /* Initial position */
+      96%, 100% {
+        left: var(--iris-left);
+        top: var(--iris-top);
+      }
+    }
+
+    .iris-left {
+      animation-name: iris-left;
+      animation-duration: 20s;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes iris-left {
+      /* Initial position */
+      0%, 20% {
+        left: var(--iris-left);
+        top: var(--iris-top);
+      }
+      /* Look at the audience on the right */
+      24%, 40% {
+        left: calc(var(--iris-left) - var(--eye-w-half) + var(--iris-w-half));
+        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
+      }
+      /* Move by the bottom */
+      44% {
+        left: calc(var(--iris-left));
+        top: calc(var(--iris-top) + var(--eye-h-half) - (var(--iris-h-half) / 2));
+      }
+      /* Look at the audience on the left */
+      48%, 60% {
+        left: calc(var(--iris-left) + var(--eye-w-half) - var(--iris-w-half));
+        top: calc(var(--iris-top) + var(--eye-h-half) - var(--iris-h-half));
+      }
+      /* Initial position */
+      64%, 80% {
+        left: var(--iris-left);
+        top: var(--iris-top);
+      }
+      /* Squinty */
+      84%, 90% {
+        left: calc(var(--iris-left) - var(--eye-w-half) + var(--iris-w-half));
+        top: var(--iris-top);
+      }
+      /* Rollback */
+      92% {
+        left: calc(var(--iris-left) - var(--eye-w-half) - var(--iris-w-half));
+        top: var(--iris-top);
+        animation-timing-function: steps(1, end);
+      }
+      94% {
+        left: calc(var(--iris-left) + var(--eye-w-half) + var(--iris-w-half));
+        top: var(--iris-top);
+      }
+      /* Initial position */
+      96%, 100% {
+        left: var(--iris-left);
+        top: var(--iris-top);
+      }
+    }
+
+    .pupille {
+      background-color: rgb(0, 0, 0);
+      width: var(--pupil-width);
+      height: var(--pupil-height);
+      border-radius: 50%;
+      position: absolute;
+      top: calc((var(--iris-height) / 2) - (var(--pupil-height) / 2));
+      left: calc((var(--iris-width) / 2) - (var(--pupil-width) / 2));
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-items: baseline;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="height: 200px;"></div>
+  <div class="container">
+    <div style="width: 50px;"></div>
+    <div class="eye">
+      <div class="iris iris-right">
+        <div class="pupille"></div>
+      </div>
+      <div class="eyelid">
+      </div>
+    </div>
+    <div style="width: 50px;"></div>
+    <div class="eye">
+      <div class="iris iris-left">
+        <div class="pupille"></div>
+      </div>
+      <div class="eyelid">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
