@@ -1,16 +1,16 @@
 :root {
-  --m-eye-width: 300px;
-  --m-eye-height: 350px;
+  --m-eye-width: 136px;
+  --m-eye-height: 150px;
   --m-eye-w-half: calc(var(--m-eye-width) / 2);
   --m-eye-h-half: calc(var(--m-eye-height) / 2);
-  --m-iris-width: 200px;
-  --m-iris-height: 220px;
+  --m-iris-width: var(--m-eye-w-half);
+  --m-iris-height: var(--m-eye-w-half);
   --m-iris-w-half: calc(var(--m-iris-width) / 2);
   --m-iris-h-half: calc(var(--m-iris-height) / 2);
   --m-iris-top: calc(var(--m-eye-h-half) - var(--m-iris-h-half));
   --m-iris-left: calc(var(--m-eye-w-half) - var(--m-iris-w-half));
-  --m-pupil-width: 100px;
-  --m-pupil-height: 100px;
+  --m-pupil-width: var(--m-iris-w-half);
+  --m-pupil-height: var(--m-pupil-width);
 }
 
 .m-glint {
@@ -23,6 +23,7 @@
 }
 
 .m-eye {
+  opacity: 0.6;
   background-color: rgb(217, 220, 224);
   width: var(--m-eye-width);
   height: var(--m-eye-height);
