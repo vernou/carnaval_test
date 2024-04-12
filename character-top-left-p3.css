@@ -14,6 +14,7 @@
   --ctl-pupil-height: var(--ctl-pupil-width);
   --ctl-glint-width: calc(var(--ctl-pupil-width) / 2);
   --ctl-glint-height: var(--ctl-glint-width);
+  --ctl-animation-delay: 0.5s;
 }
 
 .ctl-glint {
@@ -46,6 +47,7 @@
   animation-name: ctl-eyelid;
   animation-duration: 5s;
   animation-iteration-count: infinite;
+  animation-delay: var(--ctl-animation-delay);
 }
 
 @keyframes ctl-eyelid {
@@ -75,7 +77,7 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-name: ctl-iris;
-  animation-delay: 0.5s;
+  animation-delay: var(--ctl-animation-delay);
 }
 
 @keyframes ctl-iris {
