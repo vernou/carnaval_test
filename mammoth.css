@@ -16,7 +16,7 @@
 }
 
 .m-glint {
-  background-color: rgb(217, 220, 224);
+  background-color: white;
   width: var(--m-glint-width);
   height: var(--m-glint-height);
   border-radius: 50%;
@@ -27,7 +27,8 @@
 
 .m-eye {
   /* opacity: 0.6; */
-  background-color: rgb(217, 220, 224);
+  /* background-color: rgb(202, 205, 207); */
+  background-color: radial-gradient(rgb(24, 168, 31), rgb(199, 8, 8));
   width: var(--m-eye-width);
   height: var(--m-eye-height);
   border-radius: 50%;

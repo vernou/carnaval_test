@@ -18,7 +18,7 @@
 }
 
 .cbl-glint {
-  background-color: rgb(217, 220, 224);
+  background-color: white;
   width: var(--cbl-glint-width);
   height: var(--cbl-glint-height);
   border-radius: 50%;
@@ -29,7 +29,7 @@
 
 .cbl-eye {
   /* opacity: 0.6; */
-  background-color: rgb(214, 218, 221);
+  background-color: rgb(202, 205, 207);
   width: var(--cbl-eye-width);
   height: var(--cbl-eye-height);
   border-radius: 50%;

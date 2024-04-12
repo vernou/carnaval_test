@@ -18,7 +18,7 @@
 }
 
 .ctr-glint {
-  background-color: rgb(217, 220, 224);
+  background-color: white;
   width: var(--ctr-glint-width);
   height: var(--ctr-glint-height);
   border-radius: 50%;
@@ -29,7 +29,7 @@
 
 .ctr-eye {
   /* opacity: 0.6; */
-  background-color: rgb(214, 218, 221);
+  background-color: rgb(202, 205, 207);
   width: var(--ctr-eye-width);
   height: var(--ctr-eye-height);
   border-radius: 50%;
