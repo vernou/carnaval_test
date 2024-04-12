@@ -27,7 +27,7 @@
 }
 
 .cbl-eye {
-  opacity: 0.6;
+  /* opacity: 0.6; */
   background-color: rgb(214, 218, 221);
   width: var(--cbl-eye-width);
   height: var(--cbl-eye-height);

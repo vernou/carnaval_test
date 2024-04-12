@@ -27,7 +27,7 @@
 }
 
 .ctr-eye {
-  opacity: 0.6;
+  /* opacity: 0.6; */
   background-color: rgb(214, 218, 221);
   width: var(--ctr-eye-width);
   height: var(--ctr-eye-height);

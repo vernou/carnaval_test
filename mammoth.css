@@ -1,6 +1,6 @@
 :root {
-  --m-eye-width: 136px;
-  --m-eye-height: 150px;
+  --m-eye-width: 138px;
+  --m-eye-height: 154px;
   --m-eye-w-half: calc(var(--m-eye-width) / 2);
   --m-eye-h-half: calc(var(--m-eye-height) / 2);
   --m-iris-width: var(--m-eye-w-half);
@@ -26,7 +26,7 @@
 }
 
 .m-eye {
-  opacity: 0.6;
+  /* opacity: 0.6; */
   background-color: rgb(217, 220, 224);
   width: var(--m-eye-width);
   height: var(--m-eye-height);
