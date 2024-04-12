@@ -12,6 +12,18 @@
   --ctr-iris-left: calc(var(--ctr-eye-w-half) - var(--ctr-iris-w-half));
   --ctr-pupil-width: var(--ctr-iris-w-half);
   --ctr-pupil-height: var(--ctr-pupil-width);
+  --ctr-glint-width: calc(var(--ctr-pupil-width) / 2);
+  --ctr-glint-height: var(--ctr-glint-width);
+}
+
+.ctr-glint {
+  background-color: rgb(217, 220, 224);
+  width: var(--ctr-glint-width);
+  height: var(--ctr-glint-height);
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  overflow: hidden;
 }
 
 .ctr-eye {

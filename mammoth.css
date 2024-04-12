@@ -11,14 +11,17 @@
   --m-iris-left: calc(var(--m-eye-w-half) - var(--m-iris-w-half));
   --m-pupil-width: var(--m-iris-w-half);
   --m-pupil-height: var(--m-pupil-width);
+  --m-glint-width: calc(var(--m-pupil-width) / 2);
+  --m-glint-height: var(--m-glint-width);
 }
 
 .m-glint {
   background-color: rgb(217, 220, 224);
-  width: var(--m-eye-width);
-  height: var(--m-eye-height);
+  width: var(--m-glint-width);
+  height: var(--m-glint-height);
   border-radius: 50%;
-  position: relative;
+  position: absolute;
+  left: -3px;
   overflow: hidden;
 }
 

@@ -12,6 +12,18 @@
   --cbl-iris-left: calc(var(--cbl-eye-w-half) - var(--cbl-iris-w-half));
   --cbl-pupil-width: var(--cbl-iris-w-half);
   --cbl-pupil-height: var(--cbl-pupil-width);
+  --cbl-glint-width: calc(var(--cbl-pupil-width) / 2);
+  --cbl-glint-height: var(--cbl-glint-width);
+}
+
+.cbl-glint {
+  background-color: rgb(217, 220, 224);
+  width: var(--cbl-glint-width);
+  height: var(--cbl-glint-height);
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  overflow: hidden;
 }
 
 .cbl-eye {

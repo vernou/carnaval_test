@@ -12,7 +12,20 @@
   --ctl-iris-left: calc(var(--ctl-eye-w-half) - var(--ctl-iris-w-half));
   --ctl-pupil-width: var(--ctl-iris-w-half);
   --ctl-pupil-height: var(--ctl-pupil-width);
+  --ctl-glint-width: calc(var(--ctl-pupil-width) / 2);
+  --ctl-glint-height: var(--ctl-glint-width);
 }
+
+.ctl-glint {
+  background-color: rgb(217, 220, 224);
+  width: var(--ctl-glint-width);
+  height: var(--ctl-glint-height);
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  overflow: hidden;
+}
+
 
 .ctl-eye {
   opacity: 0.6;
