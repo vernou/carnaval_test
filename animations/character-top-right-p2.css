@@ -1,0 +1,123 @@
+:root {
+  --ctr-eye-width: 92px;
+  --ctr-eye-height: 98px;
+  --ctr-eye-w-half: calc(var(--ctr-eye-width) / 2);
+  --ctr-eye-h-half: calc(var(--ctr-eye-height) / 2);
+  --ctr-eyelid-top: calc(0px - var(--ctr-eye-height));
+  --ctr-iris-width: var(--ctr-eye-w-half);
+  --ctr-iris-height: var(--ctr-eye-h-half);
+  --ctr-iris-w-half: calc(var(--ctr-iris-width) / 2);
+  --ctr-iris-h-half: calc(var(--ctr-iris-height) / 2);
+  --ctr-iris-top: calc(var(--ctr-eye-h-half) - var(--ctr-iris-h-half));
+  --ctr-iris-left: calc(var(--ctr-eye-w-half) - var(--ctr-iris-w-half));
+  --ctr-pupil-width: var(--ctr-iris-w-half);
+  --ctr-pupil-height: var(--ctr-pupil-width);
+  --ctr-glint-width: calc(var(--ctr-pupil-width) / 2);
+  --ctr-glint-height: var(--ctr-glint-width);
+  --ctr-animation-delay: 1s;
+}
+
+.ctr-glint {
+  background-color: white;
+  width: var(--ctr-glint-width);
+  height: var(--ctr-glint-height);
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  overflow: hidden;
+}
+
+.ctr-eye {
+  /* opacity: 0.6; */
+  background-color: rgb(202, 205, 207);
+  width: var(--ctr-eye-width);
+  height: var(--ctr-eye-height);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctr-eyelid {
+  background-color: #ff6b6b;
+  width: var(--ctr-eye-width);
+  height: var(--ctr-eye-height);
+  position: absolute;
+  top: var(--ctr-eyelid-top);
+  animation-name: ctr-eyelid;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: var(--ctr-animation-delay);
+}
+
+@keyframes ctr-eyelid {
+  0% {
+    top: var(--ctr-eyelid-top);
+  }
+
+  15% {
+    top: 0px;
+  }
+
+  30%,
+  100% {
+    top: var(--ctr-eyelid-top);
+  }
+}
+
+.ctr-iris {
+  background-color: rgb(112, 26, 26);
+  width: var(--ctr-iris-width);
+  height: var(--ctr-iris-height);
+  border-radius: 50%;
+  position: absolute;
+  top: var(--ctr-iris-top);
+  left: var(--ctr-iris-left);
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ctr-iris;
+  animation-delay: var(--ctr-animation-delay);
+}
+
+@keyframes ctr-iris {
+
+  0%,
+  20% {
+    left: var(--ctr-iris-left);
+    top: var(--ctr-iris-top);
+  }
+
+  25%,
+  40% {
+    left: calc(var(--ctr-iris-left) + var(--ctr-eye-w-half) - var(--ctr-iris-w-half));
+    top: calc(var(--ctr-iris-top) + var(--ctr-eye-h-half) - var(--ctr-iris-h-half));
+  }
+
+  45%,
+  65% {
+    left: var(--ctr-iris-left);
+    top: var(--ctr-iris-top);
+  }
+
+  70%,
+  80% {
+    left: var(--ctr-iris-left);
+    top: calc(var(--ctr-iris-top) + var(--ctr-eye-h-half) - var(--ctr-iris-h-half));
+  }
+
+  85%,
+  100% {
+    left: var(--ctr-iris-left);
+    top: var(--ctr-iris-top);
+  }
+}
+
+.ctr-pupille {
+  background-color: rgb(0, 0, 0);
+  width: var(--ctr-pupil-width);
+  height: var(--ctr-pupil-height);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(var(--ctr-iris-w-half) - (var(--ctr-pupil-width) / 2));
+  top: calc(var(--ctr-iris-h-half) - (var(--ctr-pupil-height) / 2));
+}

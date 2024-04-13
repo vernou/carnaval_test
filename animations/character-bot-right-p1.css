@@ -1,0 +1,120 @@
+:root {
+  --cbr-eye-width: 113px;
+  --cbr-eye-height: 105px;
+  --cbr-eye-w-half: calc(var(--cbr-eye-width) / 2);
+  --cbr-eye-h-half: calc(var(--cbr-eye-height) / 2);
+  --cbr-eyelid-top: calc(0px - var(--cbr-eye-height));
+  --cbr-iris-width: var(--cbr-eye-w-half);
+  --cbr-iris-height: var(--cbr-eye-h-half);
+  --cbr-iris-w-half: calc(var(--cbr-iris-width) / 2);
+  --cbr-iris-h-half: calc(var(--cbr-iris-height) / 2);
+  --cbr-iris-top: calc(var(--cbr-eye-h-half) - var(--cbr-iris-h-half));
+  --cbr-iris-left: calc(var(--cbr-eye-w-half) - var(--cbr-iris-w-half));
+  --cbr-pupil-width: var(--cbr-iris-w-half);
+  --cbr-pupil-height: var(--cbr-pupil-width);
+  --cbr-glint-width: calc(var(--cbr-pupil-width) / 2);
+  --cbr-glint-height: var(--cbr-glint-width);
+}
+
+.cbr-glint {
+  background-color: white;
+  width: var(--cbr-glint-width);
+  height: var(--cbr-glint-height);
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  overflow: hidden;
+}
+
+.cbr-eye {
+  /* opacity: 0.6; */
+  background-color: rgb(202, 205, 207);
+  width: var(--cbr-eye-width);
+  height: var(--cbr-eye-height);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cbr-eyelid {
+  background-color: #ff6b6b;
+  width: var(--cbr-eye-width);
+  height: var(--cbr-eye-height);
+  position: absolute;
+  top: var(--cbr-eyelid-top);
+  animation-name: cbr-eyelid;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cbr-eyelid {
+  0% {
+    top: var(--cbr-eyelid-top);
+  }
+
+  15% {
+    top: 0px;
+  }
+
+  30%,
+  100% {
+    top: var(--cbr-eyelid-top);
+  }
+}
+
+.cbr-iris {
+  background-color: rgb(179, 192, 58);
+  width: var(--cbr-iris-width);
+  height: var(--cbr-iris-height);
+  border-radius: 50%;
+  position: absolute;
+  top: var(--cbr-iris-top);
+  left: var(--cbr-iris-left);
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: cbr-iris;
+}
+
+@keyframes cbr-iris {
+
+  0%,
+  20% {
+    left: var(--cbr-iris-left);
+    top: var(--cbr-iris-top);
+  }
+
+  25%,
+  40% {
+    left: calc(var(--cbr-iris-left) + var(--cbr-eye-w-half) - var(--cbr-iris-w-half));
+    top: var(--cbr-iris-top);
+  }
+
+  45%,
+  65% {
+    left: var(--cbr-iris-left);
+    top: var(--cbr-iris-top);
+  }
+
+  70%,
+  80% {
+    left: var(--cbr-iris-left);
+    top: calc(var(--cbr-iris-top) + var(--cbr-eye-h-half) - var(--cbr-iris-h-half));
+  }
+
+  85%,
+  100% {
+    left: var(--cbr-iris-left);
+    top: var(--cbr-iris-top);
+  }
+}
+
+.cbr-pupille {
+  background-color: rgb(0, 0, 0);
+  width: var(--cbr-pupil-width);
+  height: var(--cbr-pupil-height);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(var(--cbr-iris-w-half) - (var(--cbr-pupil-width) / 2));
+  top: calc(var(--cbr-iris-h-half) - (var(--cbr-pupil-height) / 2));
+}

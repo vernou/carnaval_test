@@ -1,0 +1,205 @@
+:root {
+  --m-eye-width: 138px;
+  --m-eye-height: 154px;
+  --m-eye-w-half: calc(var(--m-eye-width) / 2);
+  --m-eye-h-half: calc(var(--m-eye-height) / 2);
+  --m-iris-width: var(--m-eye-w-half);
+  --m-iris-height: var(--m-eye-w-half);
+  --m-iris-w-half: calc(var(--m-iris-width) / 2);
+  --m-iris-h-half: calc(var(--m-iris-height) / 2);
+  --m-iris-top: calc(var(--m-eye-h-half) - var(--m-iris-h-half));
+  --m-iris-left: calc(var(--m-eye-w-half) - var(--m-iris-w-half));
+  --m-pupil-width: var(--m-iris-w-half);
+  --m-pupil-height: var(--m-pupil-width);
+  --m-glint-width: calc(var(--m-pupil-width) / 2);
+  --m-glint-height: var(--m-glint-width);
+}
+
+.m-glint {
+  background-color: white;
+  width: var(--m-glint-width);
+  height: var(--m-glint-height);
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  overflow: hidden;
+}
+
+.m-eye {
+  /* opacity: 0.6; */
+  /* background-color: rgb(202, 205, 207); */
+  background-color: radial-gradient(rgb(24, 168, 31), rgb(199, 8, 8));
+  width: var(--m-eye-width);
+  height: var(--m-eye-height);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.m-eyelid {
+  background-color: #3f0909;
+  width: var(--m-eye-width);
+  height: var(--m-eye-height);
+  position: absolute;
+  top: calc(0px - (var(--m-eye-height)));
+  animation-name: m-eyelid;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes m-eyelid {
+  0% {
+    top: calc(0px - var(--m-eye-height));
+  }
+  4%, 5% {
+    top: 0px;
+  }
+  8%, 30% {
+    top: calc(0px - var(--m-eye-height));
+  }
+  /* Look at the audience on the right */
+  34%, 35% {
+    top: 0px;
+  }
+  /* Move by the bottom */
+  38%, 70% {
+    top: calc(0px - var(--m-eye-height));
+  }
+  74%, 75% {
+    top: 0px;
+  }
+  78%, 100% {
+    top: calc(0px - var(--m-eye-height));
+  }
+}
+
+.m-iris {
+  background-color: rgb(72, 147, 190);
+  width: var(--m-iris-width);
+  height: var(--m-iris-height);
+  border-radius: 50%;
+  position: absolute;
+  top: var(--m-iris-top);
+  left: var(--m-iris-left)
+}
+
+.m-iris-right {
+  animation-name: m-iris-right;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes m-iris-right {
+  /* Initial position */
+  0%, 20% {
+    left: var(--m-iris-left);
+    top: var(--m-iris-top);
+  }
+  /* Look at the audience on the right */
+  24%, 40% {
+    left: calc(var(--m-iris-left) - var(--m-eye-w-half) + var(--m-iris-w-half));
+    top: calc(var(--m-iris-top) + var(--m-eye-h-half) - var(--m-iris-h-half));
+  }
+  /* Move by the bottom */
+  44% {
+    left: calc(var(--m-iris-left));
+    top: calc(var(--m-iris-top) + var(--m-eye-h-half) - (var(--m-iris-h-half) / 2));
+  }
+  /* Look at the audience on the left */
+  48%, 60% {
+    left: calc(var(--m-iris-left) + var(--m-eye-w-half) - var(--m-iris-w-half));
+    top: calc(var(--m-iris-top) + var(--m-eye-h-half) - var(--m-iris-h-half));
+  }
+  /* Initial position */
+  64%, 80% {
+    left: var(--m-iris-left);
+    top: var(--m-iris-top);
+  }
+  /* Squinty */
+  84%, 90% {
+    left: calc(var(--m-iris-left) + var(--m-eye-w-half) - var(--m-iris-w-half));
+    top: var(--m-iris-top);
+  }
+  /* Rollback */
+  92% {
+    left: calc(var(--m-iris-left) + var(--m-eye-w-half) + var(--m-iris-w-half));
+    top: var(--m-iris-top);
+    animation-timing-function: steps(1, end);
+  }
+  94% {
+    left: calc(var(--m-iris-left) - var(--m-eye-w-half) - var(--m-iris-w-half));
+    top: var(--m-iris-top);
+  }
+  /* Initial position */
+  96%, 100% {
+    left: var(--m-iris-left);
+    top: var(--m-iris-top);
+  }
+}
+
+.m-iris-left {
+  animation-name: m-iris-left;
+  animation-duration: 20s;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes m-iris-left {
+  /* Initial position */
+  0%, 20% {
+    left: var(--m-iris-left);
+    top: var(--m-iris-top);
+  }
+  /* Look at the audience on the right */
+  24%, 40% {
+    left: calc(var(--m-iris-left) - var(--m-eye-w-half) + var(--m-iris-w-half));
+    top: calc(var(--m-iris-top) + var(--m-eye-h-half) - var(--m-iris-h-half));
+  }
+  /* Move by the bottom */
+  44% {
+    left: calc(var(--m-iris-left));
+    top: calc(var(--m-iris-top) + var(--m-eye-h-half) - (var(--m-iris-h-half) / 2));
+  }
+  /* Look at the audience on the left */
+  48%, 60% {
+    left: calc(var(--m-iris-left) + var(--m-eye-w-half) - var(--m-iris-w-half));
+    top: calc(var(--m-iris-top) + var(--m-eye-h-half) - var(--m-iris-h-half));
+  }
+  /* Initial position */
+  64%, 80% {
+    left: var(--m-iris-left);
+    top: var(--m-iris-top);
+  }
+  /* Squinty */
+  84%, 90% {
+    left: calc(var(--m-iris-left) - var(--m-eye-w-half) + var(--m-iris-w-half));
+    top: var(--m-iris-top);
+  }
+  /* Rollback */
+  92% {
+    left: calc(var(--m-iris-left) - var(--m-eye-w-half) - var(--m-iris-w-half));
+    top: var(--m-iris-top);
+    animation-timing-function: steps(1, end);
+  }
+  94% {
+    left: calc(var(--m-iris-left) + var(--m-eye-w-half) + var(--m-iris-w-half));
+    top: var(--m-iris-top);
+  }
+  /* Initial position */
+  96%, 100% {
+    left: var(--m-iris-left);
+    top: var(--m-iris-top);
+  }
+}
+
+.m-pupille {
+  background-color: rgb(0, 0, 0);
+  width: var(--m-pupil-width);
+  height: var(--m-pupil-height);
+  border-radius: 50%;
+  position: absolute;
+  top: calc((var(--m-iris-height) / 2) - (var(--m-pupil-height) / 2));
+  left: calc((var(--m-iris-width) / 2) - (var(--m-pupil-width) / 2));
+}

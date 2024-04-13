@@ -1,0 +1,123 @@
+:root {
+  --cbl-eye-width: 75px;
+  --cbl-eye-height: 80px;
+  --cbl-eye-w-half: calc(var(--cbl-eye-width) / 2);
+  --cbl-eye-h-half: calc(var(--cbl-eye-height) / 2);
+  --cbl-eyelid-top: calc(0px - var(--cbl-eye-height));
+  --cbl-iris-width: var(--cbl-eye-w-half);
+  --cbl-iris-height: var(--cbl-eye-h-half);
+  --cbl-iris-w-half: calc(var(--cbl-iris-width) / 2);
+  --cbl-iris-h-half: calc(var(--cbl-iris-height) / 2);
+  --cbl-iris-top: calc(var(--cbl-eye-h-half) - var(--cbl-iris-h-half));
+  --cbl-iris-left: calc(var(--cbl-eye-w-half) - var(--cbl-iris-w-half));
+  --cbl-pupil-width: var(--cbl-iris-w-half);
+  --cbl-pupil-height: var(--cbl-pupil-width);
+  --cbl-glint-width: calc(var(--cbl-pupil-width) / 2);
+  --cbl-glint-height: var(--cbl-glint-width);
+  --cbl-animation-delay: 1.5s;
+}
+
+.cbl-glint {
+  background-color: white;
+  width: var(--cbl-glint-width);
+  height: var(--cbl-glint-height);
+  border-radius: 50%;
+  position: absolute;
+  left: -3px;
+  overflow: hidden;
+}
+
+.cbl-eye {
+  /* opacity: 0.6; */
+  background-color: rgb(202, 205, 207);
+  width: var(--cbl-eye-width);
+  height: var(--cbl-eye-height);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.cbl-eyelid {
+  background-color: #ff6b6b;
+  width: var(--cbl-eye-width);
+  height: var(--cbl-eye-height);
+  position: absolute;
+  top: var(--cbl-eyelid-top);
+  animation-name: cbl-eyelid;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: var(--cbl-animation-delay);
+}
+
+@keyframes cbl-eyelid {
+  0% {
+    top: var(--cbl-eyelid-top);
+  }
+
+  15% {
+    top: 0px;
+  }
+
+  30%,
+  100% {
+    top: var(--cbl-eyelid-top);
+  }
+}
+
+.cbl-iris {
+  background-color: rgb(180, 8, 137);
+  width: var(--cbl-iris-width);
+  height: var(--cbl-iris-height);
+  border-radius: 50%;
+  position: absolute;
+  top: var(--cbl-iris-top);
+  left: var(--cbl-iris-left);
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: cbl-iris;
+  animation-delay: var(--cbl-animation-delay);
+}
+
+@keyframes cbl-iris {
+
+  0%,
+  20% {
+    left: var(--cbl-iris-left);
+    top: var(--cbl-iris-top);
+  }
+
+  25%,
+  40% {
+    left: calc(var(--cbl-iris-left) - var(--cbl-eye-w-half) + var(--cbl-iris-w-half));
+    top: var(--cbl-iris-top);
+  }
+
+  45%,
+  65% {
+    left: var(--cbl-iris-left);
+    top: var(--cbl-iris-top);
+  }
+
+  70%,
+  80% {
+    left: var(--cbl-iris-left);
+    top: calc(var(--cbl-iris-top) + var(--cbl-eye-h-half) - var(--cbl-iris-h-half));
+  }
+
+  85%,
+  100% {
+    left: var(--cbl-iris-left);
+    top: var(--cbl-iris-top);
+  }
+}
+
+.cbl-pupille {
+  background-color: rgb(0, 0, 0);
+  width: var(--cbl-pupil-width);
+  height: var(--cbl-pupil-height);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(var(--cbl-iris-w-half) - (var(--cbl-pupil-width) / 2));
+  top: calc(var(--cbl-iris-h-half) - (var(--cbl-pupil-height) / 2));
+}
